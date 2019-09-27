@@ -23,11 +23,8 @@ function prepend(a, list) {
 
 function nth(list, num) {
   	let value;
-	for (let i = 0; i <= num; i++) {
-      if (list == null) {
-        return undefined; 
-        break;
-      }
+	for (let i = 1; i <= num; i++) {
+      if (list == null) return undefined;
       value = list.value;
       list = list.rest;
     }
