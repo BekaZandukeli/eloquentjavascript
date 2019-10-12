@@ -1,15 +1,17 @@
 function deepEqual(x, y) {
     
-	if (typeof x == "object" && typeof y == "object") {  // თუ ობიექტებია ვაგრძელებთ, თუ არა, წავედით მე-20 ხაზზე.
-        if (Object.keys(x).length !== Object.keys(y).length) return false; // ამით შესაძლოა რესურსი დაიზოგოს.
+	if (typeof x == "object" && typeof y == "object") {  // თუ ობიექტებია ვაგრძელებთ, თუ არა, წავედით 26-ე ხაზზე.
+        if (Object.keys(x).length !== Object.keys(y).length) return false; 
+        // ზემოთ სიგრძეების ტოლობა მნიშვნელოვანია, რადგან თუ ერთ-ერთი ობიექტის ელემენტები მეორე ობიექტის 
+        // ელემენტების ქვესიმრავლე იქნება და counter-ს 22-ე ხაზზე ამ პატარა ობიექტს შევადარებთ შეცდომით true-ს დაგვიბრუნდება. 
         else { 
                 let counter = 0;
-                // ყოველ x-ის property name-ს ვადარებ ყველა y-ისას.
+                // ქვემოთ ყოველ x-ის property name-ს ვადარებ ყველა y-ისას.
                 for (let propertyX of Object.keys(x)) {
                     for (let propertyY of Object.keys(y)) {
                         // თუ რომელიმე ორი property name ერთმანეთს დაემთხვა და მათგან არც ერთი არაა 
                         // ობიექტი მაშინ ვადარებთ მათ value-ებს და ტოლობის შემთხვევაში counter++.
-                        // სხვა შემთხვევაში გადავდივართ მე-16 ხაზზე და ვლოცულობთ, რომ იმუშაოს >_<
+                        // სხვა შემთხვევაში გადავდივართ მე-18 ხაზზე და ვლოცულობთ, რომ იმუშაოს >_<
                         if (propertyX == propertyY) {
                             if (typeof x[propertyX] !== "object" && typeof y[propertyY] !== "object") {
                                 if (x[propertyX] == y[propertyY]) counter++;
