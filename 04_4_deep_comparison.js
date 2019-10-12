@@ -29,7 +29,6 @@ function deepEqual(x, y) {
                         if (propertyX == propertyY) {
                             if (typeof x[propertyX] !== "object" && typeof y[propertyY] !== "object") {
                                 if (x[propertyX] == y[propertyY]) counter++;
-                                debugger;
                             } else if (deepEqual(x[propertyX], y[propertyY])) counter++; /* <------ დიიახ! დიიახ! დიიაააახ!!! ეს რეკურსიააა! ^_^  */  
                         } 
                     }
