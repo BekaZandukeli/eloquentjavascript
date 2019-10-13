@@ -35,13 +35,13 @@ console.log(deepEqual(obj, obj));
 // → true
 console.log(deepEqual(1, 2));
 // → false
-console.log(deepEqual("რამე", "რამე"));
-// → true
-console.log(deepEqual("რამე", "რუმე"));
-// → false
 console.log(deepEqual(obj, {here: 1, object: 2}));
 // → false
 console.log(deepEqual(obj, {object: 2, here: {is: "an"}}));
 // → true
 console.log(deepEqual({object: 2, "შარზევარ": {here: {is: "an"}}}, {"შარზევარ": {here: {is: "an"}}, object: 2}));
 // → true
+console.log(deepEqual(["ტორტი", 15, 27], ["ტორტი", 15, 27]));
+// → true
+console.log(deepEqual(["ბადრიჯანი", 15, 27], ["ტორტი", 15, 27]));
+// → false
