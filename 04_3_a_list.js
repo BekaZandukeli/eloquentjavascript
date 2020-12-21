@@ -1,7 +1,7 @@
 function arrayToList(array) {
 	let list = null;
   	for (i = array.length - 1; i >= 0; i--) {
-    	list = {value: array[i], rest: list};
+    	list = { value: array[i], rest: list };
     }
 	return list;
 }
@@ -17,7 +17,7 @@ function listToArray(list) {
 }
 
 function prepend(a, list) {
-	list = {value: a, rest: list};
+	list = { value: a, rest: list };
   	return list;
 }
 
