@@ -37,7 +37,7 @@ class GroupIterator {
   }
 
   next() {
-    if (this.position === this.group.members.length) return { done: true };
+    if (this.position >= this.group.members.length) return { done: true };
     let result = { value: this.group.members[this.position], done: false };
     this.position++;
     return result;
